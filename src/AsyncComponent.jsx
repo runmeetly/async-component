@@ -1,7 +1,23 @@
+/*
+ *  Copyright 2019 Meetly Inc.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
 import React from "react";
+import { Validator } from "./Validator";
 
 /**
- *
  *  For `default` imports, instead of this:
  *
  *       import React from "react";
@@ -28,6 +44,8 @@ import React from "react";
  *       }
  */
 export const DefaultAsyncComponent = importComponent => {
+  const validImportComponent = Validator.importComponent(importComponent);
+
   class AsyncComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -38,7 +56,7 @@ export const DefaultAsyncComponent = importComponent => {
     }
 
     componentDidMount() {
-      importComponent().then(module => {
+      validImportComponent().then(module => {
         const component = module.default;
         this.setState({ Component: component });
       });
@@ -54,7 +72,6 @@ export const DefaultAsyncComponent = importComponent => {
 };
 
 /**
- *
  *  For `named` imports, instead of this:
  *
  *       import React from "react";
@@ -84,6 +101,8 @@ export const DefaultAsyncComponent = importComponent => {
  *       }
  */
 export const NamedAsyncComponent = importComponent => {
+  const validImportComponent = Validator.importComponent(importComponent);
+
   class AsyncComponent extends React.Component {
     constructor(props) {
       super(props);
@@ -94,7 +113,7 @@ export const NamedAsyncComponent = importComponent => {
     }
 
     async componentDidMount() {
-      importComponent().then(component => {
+      validImportComponent().then(component => {
         this.setState({ Component: component });
       });
     }
