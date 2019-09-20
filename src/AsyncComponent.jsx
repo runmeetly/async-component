@@ -112,7 +112,7 @@ export const NamedAsyncComponent = importComponent => {
       };
     }
 
-    async componentDidMount() {
+    componentDidMount() {
       validImportComponent().then(component => {
         this.setState({ Component: component });
       });
