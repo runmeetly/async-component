@@ -1,7 +1,7 @@
 # async-component
 
-AsyncComponent is a simple wrapper for loading React
-Components using Javascript dynamic imports.
+AsyncComponent is a simple wrapper for loading React Components using
+Javascript dynamic imports.
 
 ## Install
 
@@ -15,9 +15,8 @@ $ yarn add @runmeetly/async-component
 
 ## Why
 
-Dynamic module imports are the future of Javascript,
-and making it easy to use inside of React - the
-leading Javascript framework - will help improve
+Dynamic module imports are the future of Javascript, and making it easy to
+use inside of React - the leading Javascript framework - will help improve
 the ecosystem overall.
 
 See information like
@@ -28,8 +27,8 @@ for more information.
 
 ## How
 
-There are two ways to use Async components,
-`DefaultAsyncComponent` and `NamedAsyncComponent`.
+There are two ways to use Async components, `DefaultAsyncComponent`
+and `NamedAsyncComponent`.
 
 For `default` imports, instead of this:
 
