@@ -1,6 +1,6 @@
 {
   "name": "@runmeetly/async-component",
-  "version": "0.0.2",
+  "version": "0.0.3-SNAPSHOT",
   "description": "Dynamic Webpack module importing for React Components",
   "main": "dist/async-component.min.js",
   "repository": "https://github.com/runmeetly/async-component",
